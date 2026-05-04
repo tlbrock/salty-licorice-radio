@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const jetBrains_Mono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -21,9 +21,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} h-full antialiased`}
+      className={`${jetBrains_Mono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-neutral-100">{children}</body>
+      <body className="min-h-full flex flex-col bg-neutral-900 text-lime-400 font-mono">{children}</body>
     </html> 
   );
 }
