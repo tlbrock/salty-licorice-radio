@@ -62,4 +62,13 @@ export const getArticleData = async (id: string) => {
         date: moment(matterResult.data.date).format("MMMM D, YYYY"),
         category: matterResult.data.category,
     };
-}    
+}
+
+// function to get all articles for homepage using pagination
+// export function getArticles() {
+//     const pageSize = 5;
+//     const articles = getSortedArticles();
+//     const totalPages = Math.ceil(articles.length / pageSize);
+//     const paginatedArticles: Record<number, ArticleItem[]> = {};
+
+// }
