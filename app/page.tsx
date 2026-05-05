@@ -1,6 +1,7 @@
 import ArticleListItem from "../components/ArticleListItem";
-import { getCategorizedArticles } from "../lib/articles";
+import { getCategorizedArticles, getSortedArticles } from "../lib/articles";
 import Header from "../components/Header";
+import Playlist from "@/components/Playlist";
 
 const HomePage = () => {
   const articles = getCategorizedArticles()
@@ -17,8 +18,11 @@ const HomePage = () => {
               articles={articles[category]}
             />
           ))}
-
         </section>
+        <div className="mx-auto w-10/12 md:w-1/2 flex flex-col gap-5">
+          <h2 className="text-xl font-bold uppercase">Latest show:</h2>
+          <Playlist articleId={getSortedArticles()[0]?.id} />
+        </div>
       </section>
     </>
   )
