@@ -64,11 +64,10 @@ export const getArticleData = async (id: string) => {
     };
 }
 
-// function to get all articles for homepage using pagination
-// export function getArticles() {
-//     const pageSize = 5;
-//     const articles = getSortedArticles();
-//     const totalPages = Math.ceil(articles.length / pageSize);
-//     const paginatedArticles: Record<number, ArticleItem[]> = {};
-
-// }
+export function getNextAndPreviousArticles(id: string): { next: ArticleItem | null, previous: ArticleItem | null } {
+    const articles = getSortedArticles();
+    const index = articles.findIndex((article) => article.id === id);
+    const next = index < articles.length - 1 ? articles[index + 1] : null;
+    const previous = index > 0 ? articles[index - 1] : null;
+    return { next, previous };
+}

@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 
-article > h2 {
+article>h2 {
      @apply text-2xl font-bold mb-4;
+}
+
+article>h5 {
+     @apply mt-4;
 }
