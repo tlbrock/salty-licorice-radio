@@ -22,7 +22,7 @@ export default function PaginationControl({ totalPages, currentPage }: { totalPa
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
                     <Pagination.Item key={p}>
                         <Pagination.Link
-                            className=" cursor-pointer"
+                            className={`cursor-pointer ${currentPage === p ? "font-bold underline" : ""}`}
                             isActive={currentPage === p}
                             onPress={() => router.push(`/page/${p}`)}
                         >
