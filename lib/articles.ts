@@ -54,7 +54,6 @@ export const getArticleData = async (id: string) => {
         .use(html)
         .process(matterResult.content);
     const contentHtml = processedContent.toString();
-
     return {
         id,
         contentHtml,

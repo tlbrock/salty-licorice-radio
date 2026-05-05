@@ -1,8 +1,7 @@
 ---
 title: "SL#9"
 date: 2025-04-23
-categories: 
-  - "playlists"
+categories: "playlists"
 ---
 
 ## SL#9
