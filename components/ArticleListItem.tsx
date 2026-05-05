@@ -13,6 +13,7 @@ const ArticleListItem = ({ categories, articles }: Props) => {
                 <Link
                     key={article.id}
                     href={`/${article.id}`}
+                    aria-label={`Read playlist: ${article.title}`}
                 >
                     {article.title}
                 </Link>

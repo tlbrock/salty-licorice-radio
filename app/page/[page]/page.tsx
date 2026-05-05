@@ -1,7 +1,8 @@
 import PaginationControl from "@/components/PaginationControl";
 import Playlist from "@/components/Playlist";
 import { getSortedArticles } from "@/lib/articles";
-import Header from "@/components/Header";;
+import Header from "@/components/Header";
+import RecentEpisodes from "@/components/RecentEpisodes";
 
 const POSTS_PER_PAGE = 5;
 
@@ -21,20 +22,25 @@ export default async function ArticleListPage({ params }: { params: { page: stri
     const paginatedArticles = articles.slice((currentPage - 1) * POSTS_PER_PAGE, currentPage * POSTS_PER_PAGE);
 
     return (
-        <main>
-            <div>
-                <Header />
-            </div>
-            <div className="mx-auto w-10/12 md:w-1/2 mt-20 flex flex-col gap-5">
-                {paginatedArticles.map((article) => (
-                    <div key={article.id} className="mb-6">
-                        <Playlist articleId={article.id} />
-                    </div>
-                ))}
-            </div>
-            <div className="flex justify-center mb-6">
-                <PaginationControl currentPage={currentPage} totalPages={totalPages} />
-            </div>
-        </main>
+        <>
+            <Header />
+            <section className="mx-auto w-11/12 md:w-5/6 mt-4 flex flex-col gap-16 mb-20">
+                <div className="flex gap-5">
+                    <RecentEpisodes />
+                    <section className="mx-auto w-10/12 md:w-1/2 flex flex-col gap-5">
+                        <div>
+                            {paginatedArticles.map((article) => (
+                                <div key={article.id} className="mb-6">
+                                    <Playlist articleId={article.id} />
+                                </div>
+                            ))}
+                        </div>
+                        <div className="flex justify-center mb-6">
+                            <PaginationControl currentPage={currentPage} totalPages={totalPages} />
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </>
     );
 }
