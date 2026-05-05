@@ -20,7 +20,7 @@ export function getSortedArticles(): ArticleItem[] {
             id,
             title: matterResult.data.title,
             date: moment(matterResult.data.date).format("MMMM D, YYYY"),
-            category: matterResult.data.category,
+            categories: matterResult.data.categories,
         };
     })
 
@@ -38,10 +38,10 @@ export const getCategorizedArticles = (): Record<string, ArticleItem[]> => {
     const articles = getSortedArticles();
     const categorizedArticles: Record<string, ArticleItem[]> = {};
     articles.forEach((article) => {
-        if (!categorizedArticles[article.category]) {
-            categorizedArticles[article.category] = [];
+        if (!categorizedArticles[article.categories]) {
+            categorizedArticles[article.categories] = [];
         }
-        categorizedArticles[article.category].push(article);
+        categorizedArticles[article.categories].push(article);
     });
     return categorizedArticles;
 }
@@ -60,7 +60,7 @@ export const getArticleData = async (id: string) => {
         contentHtml,
         title: matterResult.data.title,
         date: moment(matterResult.data.date).format("MMMM D, YYYY"),
-        category: matterResult.data.category,
+        categories: matterResult.data.categories,
     };
 }
 

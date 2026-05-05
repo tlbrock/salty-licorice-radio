@@ -11,11 +11,11 @@ const HomePage = () => {
       <Header />
       <section className="mx-auto w-11/12 md:w-5/6 mt-4 flex flex-col gap-16 mb-20">
         <section className="md:grid md:grid-cols-2 flex flex-col gap-10">
-          {articles !== null && Object.keys(articles).map((category) => (
+          {articles !== null && Object.keys(articles).map((categories) => (
             <ArticleListItem
-              key={category}
-              category={category}
-              articles={articles[category]}
+              key={categories}
+              categories={categories}
+              articles={articles[categories]}
             />
           ))}
         </section>

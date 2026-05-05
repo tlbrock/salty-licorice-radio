@@ -2,13 +2,13 @@ import Link from "next/link";
 import type { ArticleItem } from "../types";
 
 interface Props {
-    category: string,
+    categories: string,
     articles: ArticleItem[],
 }
-const ArticleListItem = ({ category, articles }: Props) => {
+const ArticleListItem = ({ categories, articles }: Props) => {
     return (
         <div className="flex flex-col gap-5">
-            <h2>{category}</h2>
+            <h2>{categories}</h2>
             {articles.map((article) => (
                 <Link
                     key={article.id}

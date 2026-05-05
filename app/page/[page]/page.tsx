@@ -1,10 +1,9 @@
 import PaginationControl from "@/components/PaginationControl";
 import Playlist from "@/components/Playlist";
 import { getSortedArticles } from "@/lib/articles";
-import Header from "@/components/Header";
-import { Suspense } from "react";
+import Header from "@/components/Header";;
 
-const POSTS_PER_PAGE = 1;
+const POSTS_PER_PAGE = 5;
 
 export function generateStaticParams() {
     const articles = getSortedArticles();
