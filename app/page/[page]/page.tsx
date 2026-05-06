@@ -2,7 +2,6 @@ import PaginationControl from "@/components/PaginationControl";
 import Playlist from "@/components/Playlist";
 import { getSortedArticles } from "@/lib/articles";
 import Header from "@/components/Header";
-import RecentEpisodes from "@/components/RecentEpisodes";
 
 const POSTS_PER_PAGE = 5;
 

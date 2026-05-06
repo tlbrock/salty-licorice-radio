@@ -7,7 +7,7 @@ import { ArticleItem } from "@/types";
 export default function HomeContent({ articles }: { articles: ArticleItem[] }) {
 
     return (
-        <div className="flex flex-col gap-10 md:flex-row md:gap-20">
+        <div className="flex flex-col gap-5 md:flex-row">
             <RecentEpisodes />
             <div className="mx-auto w-10/12 md:w-1/2 flex flex-col gap-5">
                 <h2 className="text-xl font-bold uppercase">Latest show:</h2>
