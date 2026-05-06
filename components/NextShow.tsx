@@ -7,7 +7,8 @@ export default function NextShow() {
     const { getNextShowTime } = useNextShowTime();
     const nextShowTime = getNextShowTime();
     const isLiveNow = useIsLiveNow();
-    const formattedTime = moment(nextShowTime).format("MMMM Do YYYY, h:mm A");
+    const tzAbbr = nextShowTime.toLocaleTimeString("en-US", { timeZoneName: "short" }).split(" ").pop();
+    const formattedTime = moment(nextShowTime).format("MMMM Do YYYY, h:mm A") + ` (${tzAbbr})`;
 
     if (isLiveNow) {
         return (
