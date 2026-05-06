@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const showDay = 2; // Tuesday
 const showHour = 19; // 7 PM eastern time
-const showMinute = 0;
+const showMinute = 0; // 00 minutes, mainly for testing purposes
 const showLengthHours = 2; // Show lasts for 2 hours
 const showWeeks = [2, 4]; // Show is on the 2nd and 4th Tuesday of the month]
 
